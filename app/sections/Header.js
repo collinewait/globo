@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 
 export class Header extends React.Component {
     constructor(props){
@@ -33,7 +33,7 @@ export class Header extends React.Component {
     headStyle: {
         paddingTop: 30,
         paddingRight: 10,
-        backgroundColor: '#35606a',
+        backgroundColor: Platform.OS === 'android' ? '#31e981' : '#35606a',
         flex: 1
     }
 });
