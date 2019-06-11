@@ -32,8 +32,8 @@ export class Header extends React.Component {
     },
     headStyle: {
         paddingTop: 30,
-        paddingBottom: 10,
         paddingRight: 10,
-        backgroundColor: '#35606a'
+        backgroundColor: '#35606a',
+        flex: 1
     }
 });
