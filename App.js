@@ -5,6 +5,7 @@ import { StackNavigator } from 'react-navigation';
 
 import { Video } from './app/views/Video';
 import { VideoDetail } from './app/views/VideoDetail';
+import { Register } from './app/views/Register';
 
 const MyRoutes = StackNavigator({
   HomeRT: {
@@ -18,6 +19,9 @@ const MyRoutes = StackNavigator({
   },
   VideoDetailRT: {
     screen: VideoDetail
+  },
+  RegisterRT: {
+    screen: Register
   }
 },
 {
