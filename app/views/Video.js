@@ -12,7 +12,7 @@ export class Video extends React.Component {
     }
 
     componentDidMount() {
-        return fetch('https://www.googleapis.com/youtube/v3/search?part=snipet&q=pluralsight&type=video&key=AIzaSyCInWUEfj4kgSRHNAYEIohW-7gobjdn9Z4')
+        return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=pluralsight&type=video&key=AIzaSyCInWUEfj4kgSRHNAYEIohW-7gobjdn9Z4')
         .then(response => response.json())
         .then(responseJson => {
             this.setState({
@@ -21,5 +21,51 @@ export class Video extends React.Component {
             })
         })
         .catch(error => console.error(error));
+    }
+
+    render(){
+        return(
+            <View>
+                { this.state.listLoaded && (
+                    <View style={{ paddingTop: 30 }}>
+                        <FlatList 
+                            data={this.state.videoList}
+                            renderItem={({item}) => 
+                            <TubeItem 
+                                id={item.id.videoId}
+                                title={item.snippet.title}
+                                imageSrc={item.snippet.thumbnails.high.url}
+                            />
+                            }
+                        />
+                    </View>
+                )}
+
+                { !this.state.listLoaded && (
+                    <View style={{ padding: 30 }}>
+                        <Text>LOADING</Text>
+                    </View>
+                )}
+            </View>
+        )
+    }
+}
+
+export class TubeItem extends React.Component {
+    onPress = () => {
+        console.log(this.props.id)
+    }
+ 
+    render() {
+        return(
+            <TouchableWithoutFeedback onPress={this.onPress}>
+                <View style={{paddingTop: 20, alignItems: 'center'}}>
+                    <Image 
+                        style={{width: '100%', height: 200}}
+                        source={{uri: this.props.imageSrc}}
+                    />
+                </View>
+            </TouchableWithoutFeedback>
+        )
     }
 }

@@ -7,7 +7,6 @@ import {
     TextInput, 
     TouchableHighlight
  } from 'react-native';
- import { StackNavigator } from 'react-navigation';
 import { Header } from '../sections/Header';
 
 export class Contact extends React.Component {
