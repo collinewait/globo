@@ -12,7 +12,10 @@ export class Home extends React.Component {
         const { navigate } = this.props.navigation;
         return(
             <View style={styles.container}>
-                <Header message='Press to login' />
+                <Header
+                    message='Press to login'
+                    navigate={navigate}
+                />
                 <Hero />
                 <Menu navigate = {navigate} />
             </View>
