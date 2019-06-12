@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighLight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export class Question extends React.Component {
     static navigationOptions = {
@@ -36,21 +36,21 @@ export class Question extends React.Component {
                 { !this.state.selected && (
                     <View style={styles.container}>
                         <Text style={styles.questionText}>{this.props.question}</Text>
-                        <TouchableHighLight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer1')}>
-                            <Text style={answerText}>{this.props.answer1}</Text>
-                        </TouchableHighLight>
+                        <TouchableHighlight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer1')}>
+                            <Text style={styles.answerText}>{this.props.answer1}</Text>
+                        </TouchableHighlight>
 
-                        <TouchableHighLight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer2')}>
-                            <Text style={answerText}>{this.props.answer2}</Text>
-                        </TouchableHighLight>
+                        <TouchableHighlight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer2')}>
+                            <Text style={styles.answerText}>{this.props.answer2}</Text>
+                        </TouchableHighlight>
 
-                        <TouchableHighLight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer3')}>
-                            <Text style={answerText}>{this.props.answer3}</Text>
-                        </TouchableHighLight>
+                        <TouchableHighlight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer3')}>
+                            <Text style={styles.answerText}>{this.props.answer3}</Text>
+                        </TouchableHighlight>
 
-                        <TouchableHighLight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer4')}>
-                            <Text style={answerText}>{this.props.answer4}</Text>
-                        </TouchableHighLight>
+                        <TouchableHighlight underlayColor='#d3d3d3' onPress={() => this.chooseAnswer('answer4')}>
+                            <Text style={styles.answerText}>{this.props.answer4}</Text>
+                        </TouchableHighlight>
                     </View>
                 )}
                 {
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         backgroundColor: '#008000'
     },
-    correctContainer: {
+    wrongContainer: {
         flex: 1,
         paddingTop: 20,
         backgroundColor: '#ff0000'

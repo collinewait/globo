@@ -1,4 +1,4 @@
-export const QquizData = {
+export const QuizData = {
     questions: [
         {
             question:'What language do you use with libraries such as React and Angular?',
