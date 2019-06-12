@@ -30,7 +30,7 @@ export class Blog extends React.Component {
     }
 
     chooseBlog = (blogID) => {
-        console.log(`Blog ID chosen: ${blogID}`);
+        this.props.navigation.navigate('BlogDetailRT', {blogId: blogID});
     }
 
     render() {
