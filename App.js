@@ -9,6 +9,7 @@ import { Register } from './app/views/Register';
 import { Login } from './app/views/Login';
 import { Quiz } from './app/views/Quiz';
 import { Finish } from './app/views/QuizFinish';
+import { Blog } from './app/views/Blog';
 
 const MyRoutes = StackNavigator({
   HomeRT: {
@@ -34,6 +35,9 @@ const MyRoutes = StackNavigator({
   },
   FinishRT: {
     screen: Finish
+  },
+  BlogRT: {
+    screen: Blog
   }
 },
 {
